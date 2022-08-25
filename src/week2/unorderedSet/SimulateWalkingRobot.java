@@ -1,9 +1,12 @@
 package week2.unorderedSet;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
 public class SimulateWalkingRobot {
+
+
     class Solution {
         public int robotSim(int[] commands, int[][] obstacles) {
             int[] dx = new int[]{0, 1, 0, -1};
@@ -11,11 +14,13 @@ public class SimulateWalkingRobot {
             int x = 0, y = 0, di = 0;
 
             // Encode obstacles (x, y) as (x+30000) * (2^16) + (y+30000)
+            // Encode obstacles (x, y) as (x+30000) * (60001) + (y+30000)
             Set<Long> obstacleSet = new HashSet();
             for (int[] obstacle: obstacles) {
                 long ox = (long) obstacle[0] + 30000;
                 long oy = (long) obstacle[1] + 30000;
-                obstacleSet.add((ox << 16) + oy);
+                //obstacleSet.add((ox << 16) + oy);
+                obstacleSet.add((ox * 60001L) + oy);
             }
 
             int ans = 0;
@@ -28,7 +33,8 @@ public class SimulateWalkingRobot {
                     for (int k = 0; k < cmd; ++k) {
                         int nx = x + dx[di];
                         int ny = y + dy[di];
-                        long code = (((long) nx + 30000) << 16) + ((long) ny + 30000);
+                        //long code = (((long) nx + 30000) << 16) + ((long) ny + 30000);
+                        long code = (((long) nx + 30000) * 60001L) + ((long) ny + 30000);
                         if (!obstacleSet.contains(code)) {
                             x = nx;
                             y = ny;
