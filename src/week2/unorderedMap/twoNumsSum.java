@@ -1,4 +1,4 @@
-package week2.unorderedCollectionMap;
+package week2.unorderedMap;
 
 import java.util.HashMap;
 import java.util.Map;
