@@ -1,4 +1,4 @@
-package week1.arrays;
+package w1_array_linkList_stack_queue.arrays;
 
 public class addOne {
 

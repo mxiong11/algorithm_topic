@@ -1,4 +1,4 @@
-package week1.stacks;
+package w1_array_linkList_stack_queue.stacks;
 
 
 import java.util.Deque;

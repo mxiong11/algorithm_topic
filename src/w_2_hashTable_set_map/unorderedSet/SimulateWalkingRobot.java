@@ -1,6 +1,5 @@
-package week2.unorderedSet;
+package w_2_hashTable_set_map.unorderedSet;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 

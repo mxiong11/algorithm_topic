@@ -1,4 +1,4 @@
-package week1.linkedLists;
+package w1_array_linkList_stack_queue.linkedLists;
 
 
 /*
